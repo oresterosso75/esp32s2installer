@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/ico" href='favicon.ico' sizes="16x16">
+<title>PS4_GoldHEN 9.00</title>
+</head>
+<body>
+    <center><h3>ORESTEROSSO Host Auto flash GoldHen v2.3 (ESP32 S2)</h3><center>
+    <div id="main" style="display: none;">
+
+        <br>
+        <script
+            type="module"
+            src="https://unpkg.com/esp-web-tools@7.1.0/dist/web/install-button.js?module"></script>
+        <esp-web-install-button id="installButton" manifest="bins/manifest.json"></esp-web-install-button>
+        <br><br>
+        <marquee style="width:25%"><span>NOTA: Prima di procedere assicurati di aver chiuso qualsiasi cosa che stia utilizzando la porta com del dispositivo (ad es. Monitor seriale)</span></marquee>
+    </div>
+    <div id="notSupported" style="display: none;">
+        Il tuo browser non supporta l'API Web Serial. Prova Chrome</div>
+    <script>
+        if(navigator.serial){
+            document.getElementById("notSupported").style.display = 'none';
+            document.getElementById("main").style.display = 'block';
+        } else {
+            document.getElementById("notSupported").style.display = 'block';
+            document.getElementById("main").style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
