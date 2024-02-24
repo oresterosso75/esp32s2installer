@@ -50,24 +50,13 @@ hr {
 <br>
 <script type="text/javascript">var blink = document.getElementById('blink');setInterval(function() { blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);}, 1000);</script>
 <script type="module"src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
-        <esp-web-install-button id="installButton" manifest="bins/manifest.json">
-		<button slot="activate" class="button">START</button> </esp-web-install-button>
+        <esp-web-install-button class="btn-toolset" manifest="bins/manifest.json">
+    <button slot="activate">START</button>
+    <span slot="unsupported">Ah cavolo, il tuo browser non funziona!</span>
+    <span slot="not-allowed">Ah, non hai il permesso per usarlo su HTTP!</span>
+  </esp-web-install-button>
         <br><br>
-    </div>
-    <div id="notSupported" style="display: none;">
-        Il tuo browser non supporta l'API Web Serial. Prova Chrome</div>
-		
-
-    <script>
-        if(navigator.serial){
-            document.getElementById("notSupported").style.display = 'none';
-            document.getElementById("main").style.display = 'block';
-        } else {
-            document.getElementById("notSupported").style.display = 'block';
-            document.getElementById("main").style.display = 'none';
-        }
-    </script>
-<center><br><h5>Use SSID:&nbsp Server900s2<br> PASSWORD:&nbsp 12345678</h5></center><br><br><br><br>
+    <center><br><h5>Use SSID:&nbsp Server900s2<br> PASSWORD:&nbsp 12345678</h5></center><br><br><br><br>
 <hr class="hr">
 <h2>BUON DIVERTIMENTO!!</h2>
 <hr class="hr"><br>
