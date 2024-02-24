@@ -50,8 +50,8 @@ hr {
 <br>
 <script type="text/javascript">var blink = document.getElementById('blink');setInterval(function() { blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);}, 1000);</script>
 <script type="module"src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
-        <esp-web-install-button class="btn-toolset" manifest="bins/manifest.json">
-    <button slot="activate">START</button>
+        <esp-web-install-button manifest="bins/manifest.json">
+    <button slot="activate"class="button">START</button>
     <span slot="unsupported">Ah cavolo, il tuo browser non funziona!</span>
     <span slot="not-allowed">Ah, non hai il permesso per usarlo su HTTP!</span>
   </esp-web-install-button>
