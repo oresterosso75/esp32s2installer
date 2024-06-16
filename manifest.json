@@ -1,0 +1,18 @@
+{
+  "name": "ESP32-s2 Server",
+  "version": "GOLDHEN V2.4b17.3",
+  "home_assistant_domain": "custom_device",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "Server_900.esp32s2.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
+
+
