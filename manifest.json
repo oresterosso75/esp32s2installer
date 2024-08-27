@@ -7,12 +7,21 @@
       "chipFamily": "ESP32-S2",
       "parts": [
         {
-          "path": "Server_900.esp32s2.bin",
-          "offset": 0
+          "path": "ESP32_Server_900u.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "ESP32_Server_900u.ino.partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "ESP32_Server_900u.ino.bin",
+          "offset": 65536
         }
       ]
     }
   ]
 }
+
 
 
