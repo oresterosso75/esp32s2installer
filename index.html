@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oresterosso 900 - Autoinstall ESP32-S2</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff8c00, #ffa500);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative; /* Per posizionare il pulsante YouTube all'interno */
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: all 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .youtube {
+            background-color: #FF0000;
+            font-size: 14px; /* Dimensione ridotta */
+            padding: 8px 15px; /* Dimensione del padding ridotta */
+            position: absolute; /* Posizionamento assoluto per ancorarlo all'angolo in basso a destra */
+            bottom: 10px; /* Spazio dal fondo */
+            right: 10px; /* Spazio dal lato destro */
+        }
+
+        .youtube:hover {
+            background-color: #cc0000;
+        }
+
+        hr {
+            border: 2px solid black;
+            border-radius: 50px;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        #blink {
+            font-weight: bold;
+            font-size: 20px;
+            color: #000;
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        .message {
+            font-weight: bold;
+            font-size: 18px;
+            color: red;
+        }
+
+        #main {
+            margin-bottom: -5px; /* Riduci il margine inferiore per sollevare il testo SSID */
+        }
+
+        h5 {
+            margin-top: -5px; /* Aggiungi un po' di margine superiore per separare il testo */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>ORESTEROSSO Host Auto flash ESP32-S2 GoldHEN v2.4b17.3 (Pre-release) </h4>
+        <div id="blink"><h5>New PS4 Jailbreak Fw 9.00</h5></div>
+        <div id="main" style="display: none;">
+            <br>
+            <!-- Script per l'installazione -->
+            <script type="module" src="https://unpkg.com/esp-web-tools@8.0.6/dist/web/install-button.js?module"></script>
+            <esp-web-install-button id="installButton" manifest="manifest.json" class="button">Connetti</esp-web-install-button>
+            <br><br>
+        </div>
+        <div id="notSupported" class="message" style="display: none;">Azz!, il tuo browser non funziona!</div>
+        <div id="not-allowed" class="message" style="display: none;">Azz!, non hai il permesso di usarlo su HTTP!</div>
+        <script>
+            if (navigator.serial) {
+                document.getElementById("notSupported").style.display = 'none';
+                document.getElementById("main").style.display = 'block';
+            } else {
+                document.getElementById("notSupported").style.display = 'block';
+                document.getElementById("main").style.display = 'none';
+            }
+        </script>
+        <br>
+        <h5>User SSID: PS4_WEB_AP &emsp; PASSWORD: 12345678</h5>
+        <hr>
+        <h2>BUON DIVERTIMENTO!!</h2>
+        <hr>
+        <!-- Pulsante YouTube posizionato in basso a destra -->
+        <a href="https://www.youtube.com/@oresterosso" class="button youtube" target="_blank">
+            YouTube
+        </a>
+    </div>
+</body>
+</html>
