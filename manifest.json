@@ -1,6 +1,6 @@
 {
   "name": "ESP32-s2 Server",
-  "version": "GOLDHEN V2.4b17.3",
+  "version": "GOLDHEN V2.4b18",
   "home_assistant_domain": "custom_device",
   "builds": [
     {
