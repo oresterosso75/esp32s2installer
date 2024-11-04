@@ -1,0 +1,24 @@
+{
+  "name": "ESP32-s2 Server",
+  "version": "GOLDHEN V2.3",
+  "home_assistant_domain": "custom_device",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "ESP32_Server_900u.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "ESP32_Server_900u.ino.partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "ESP32_Server_900u.ino.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
