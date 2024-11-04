@@ -108,23 +108,39 @@
         <div id="notSupported" class="message" style="display: none;">Azz!, il tuo browser non funziona!</div>
         <div id="not-allowed" class="message" style="display: none;">Azz!, non hai il permesso di usarlo su HTTP!</div>
         <script>
-            if (navigator.serial) {
-                document.getElementById("notSupported").style.display = 'none';
-                document.getElementById("main").style.display = 'block';
-            } else {
-                document.getElementById("notSupported").style.display = 'block';
-                document.getElementById("main").style.display = 'none';
-            }
+    // Controlla se l'API Serial è supportata
+    if (navigator.serial) {
+        document.getElementById("notSupported").style.display = 'none';
+        document.getElementById("main").style.display = 'block';
+    } else {
+        document.getElementById("notSupported").style.display = 'block';
+        document.getElementById("main").style.display = 'none';
+    }
 
-            const installButton = document.getElementById("installButton");
-            const goldhenVersionSelector = document.getElementById("goldhenVersion");
+    const installButton = document.getElementById("installButton");
+    const goldhenVersionSelector = document.getElementById("goldhenVersion");
 
-            goldhenVersionSelector.addEventListener("change", function() {
-                const selectedManifest = goldhenVersionSelector.value;
-                installButton.setAttribute("manifest", selectedManifest);
-                
+    goldhenVersionSelector.addEventListener("change", function() {
+        const selectedManifest = goldhenVersionSelector.value;
+        installButton.setAttribute("manifest", selectedManifest);
+        
+        console.log("Controllando il file:", selectedManifest);
+
+        // Verifica se il file manifest.json esiste
+        fetch(selectedManifest)
+            .then(response => {
+                if (response.ok) {
+                    console.log("Il file manifest.json è stato trovato:", selectedManifest);
+                } else {
+                    console.error("File non trovato. Status:", response.status);
+                }
+            })
+            .catch(error => {
+                console.error("Si è verificato un errore durante la richiesta del file:", error);
             });
-        </script>
+    });
+</script>
+
         <br>
         <h5>User SSID: PS4_WEB_AP &emsp; PASSWORD: 12345678</h5>
         <hr>
