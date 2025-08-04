@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oresterosso ESP32-S2 Autoinstall</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script type="module" src="https://unpkg.com/esp-web-tools@8.0.6/dist/web/install-button.js?module"></script>
+  <style>
+    body {
+      background-color: #0a0f1c;
+      color: #00ffff;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      border: 1px solid #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+      padding: 10px;
+      max-width: 800px;
+      margin: 80px auto 20px auto;
+      background-color: #111;
+      border-radius: 10px;
+    }
+
+    h2, h4, h5 {
+      text-shadow: 0 0 10px #00ffff;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .neon-text {
+      color: #00ffff;
+      text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #0ff,
+        0 0 60px #0ff;
+    }
+
+    select {
+      background-color: #000;
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      padding: 10px;
+      font-family: 'Courier New', monospace;
+      font-style: italic;
+      margin-top: 10px;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    .message {
+      color: red;
+      font-style: italic;
+      margin-top: 20px;
+      text-shadow: 0 0 8px red;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #00ffff;
+      width: 60%;
+      margin: 25px auto;
+      box-shadow: 0 0 8px #00ffff;
+    }
+
+    a.youtube, a.telegram {
+      display: inline-block;
+      color: #fff;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-size: 12px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      transition: 0.3s ease;
+      margin-left: 10px;
+    }
+
+    a.youtube {
+      background-color: #ff0000;
+      box-shadow: 0 0 10px #ff0000;
+    }
+
+    a.youtube:hover {
+      background-color: #cc0000;
+      box-shadow: 0 0 20px #ff0000;
+    }
+
+    a.telegram {
+      background-color: #0088cc;
+      box-shadow: 0 0 10px #0088cc;
+    }
+
+    a.telegram:hover {
+      background-color: #006fa7;
+      box-shadow: 0 0 20px #0088cc;
+    }
+
+    .youtube-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 5px;
+      padding-left: 0px;
+    }
+
+    #blink {
+      animation: blink-animation 1s steps(2, start) infinite;
+      font-style: italic;
+    }
+
+    @keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="neon-text">ORESTEROSSO Auto Flash ESP32-S2</h2>
+    <div id="blink">
+      <h5>✨New PS4 Jailbreak FW 9.00✨</h5>
+    </div>
+
+    <div id="main" style="display: none;">
+      <label for="goldhenVersion">Seleziona versione GoldHEN:</label><br />
+      <select id="goldhenVersion">
+        <option value="ESP32-s2_Server_PSFree-Lapse/manifest.json">ESP32-s2 Server PSFree-Lapse</option>
+		<option value="goldhen_2.4b18.5/manifest.json">GoldHEN v2.4b18.5</option>
+        <option value="goldhen_2.4b18.3/manifest.json">GoldHEN v2.4b18.3</option>
+        <option value="goldhen_2.4b18.2/manifest.json">GoldHEN v2.4b18.2</option>
+        <option value="goldhen_2.4b18/manifest.json">GoldHEN v2.4b18</option>
+        <option value="psfree_2.4b18/manifest.json">GoldHEN v2.4b18 + PSFree</option>
+        <option value="goldhen_lite/manifest.json">GoldHEN Lite 1.0</option>
+        <option value="goldhen_2.3/manifest.json">GoldHEN v2.3</option>
+      </select>
+
+      <br><br>
+      <esp-web-install-button id="installButton" manifest="ESP32-s2_Server_PSFree-Lapse/manifest.json">
+        CONNETTI
+      </esp-web-install-button>
+
+      <div id="notSupported" class="message" style="display: none;">Browser non supportato.</div>
+      <div id="not-allowed" class="message" style="display: none;">Accesso negato via HTTP.</div>
+
+      <hr />
+      <h5>SSID: PS4_WEB_AP &nbsp; | &nbsp; PASSWORD: 12345678</h5>
+      <hr />
+      <h4>BUON DIVERTIMENTO!</h4><br /><br />
+
+      <div class="youtube-container">
+        <a href="https://www.youtube.com/@oresterosso" class="youtube" target="_blank">YouTube Channel</a>
+        <a href="https://t.me/TeamItalianModder" class="telegram" target="_blank">Community Telegram</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: #00ffff; margin: auto 10px; text-align: center; text-shadow: 0 0 5px #00ffff;">
+  💖 Supporta il mio lavoro con una donazione!<br>
+  Se desideri contribuire, puoi farlo tramite PayPal al seguente link:<br><br>
+  👉 <a href="https://www.paypal.me/oresterosso" target="_blank" 
+        style="color: #ffff00; text-shadow: 0 0 10px #ffff00; font-weight: bold; 
+               background-color: rgba(255, 255, 0, 0.1); padding: 6px 12px; 
+               border-radius: 6px; text-decoration: none;">
+        paypal.me/oresterosso
+      </a>
+</p>
+
+  <!-- 🔢 Contatore visitatori -->
+  <div style="margin-top: 30px; display: flex; justify-content: flex-start; padding-left: 30px;">
+    <a href="https://www.hitwebcounter.com" target="_blank" title="Contatore Visite">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=21153097&style=0010&nbdigits=5&type=ip&initCount=0" 
+           title="Visitatori" alt="Contatore" border="0"
+           style="box-shadow: 0 0 10px #00ffff; border-radius: 5px;" />
+    </a>
+    <p style="font-size: 12px; color: #00ffff; margin: auto 10px; text-shadow: 0 0 5px #00ffff;">
+      Visitatori totali
+    </p>
+  </div>
+
+  <script>
+    if (navigator.serial) {
+      document.getElementById("notSupported").style.display = 'none';
+      document.getElementById("main").style.display = 'block';
+    } else {
+      document.getElementById("notSupported").style.display = 'block';
+      document.getElementById("main").style.display = 'none';
+    }
+
+    const installButton = document.getElementById("installButton");
+    const goldhenVersionSelector = document.getElementById("goldhenVersion");
+
+    goldhenVersionSelector.addEventListener("change", function () {
+      const selectedManifest = goldhenVersionSelector.value;
+      installButton.setAttribute("manifest", selectedManifest);
+    });
+
+    customElements.whenDefined('esp-web-install-button').then(() => {
+      const shadowRoot = installButton.shadowRoot;
+      if (shadowRoot) {
+        const btn = shadowRoot.querySelector('button');
+        btn.style.backgroundColor = "#000";
+        btn.style.color = "#00ffff";
+        btn.style.border = "2px solid #00ffff";
+        btn.style.fontFamily = "'Courier New', monospace";
+        btn.style.fontStyle = "italic";
+        btn.style.padding = "10px 20px";
+        btn.style.borderRadius = "5px";
+        btn.style.boxShadow = "0 0 10px #00ffff";
+        btn.style.cursor = "pointer";
+        btn.addEventListener('mouseover', () => {
+          btn.style.backgroundColor = "#00ffff";
+          btn.style.color = "#000";
+          btn.style.boxShadow = "0 0 20px #00ffff";
+        });
+        btn.addEventListener('mouseout', () => {
+          btn.style.backgroundColor = "#000";
+          btn.style.color = "#00ffff";
+          btn.style.boxShadow = "0 0 10px #00ffff";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
