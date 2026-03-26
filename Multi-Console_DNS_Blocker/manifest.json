@@ -7,15 +7,15 @@
       "chipFamily": "ESP32-S2",
       "parts": [
         {
-          "path": "New-Multi-Console_DNS_BLOKER_ESP32_s2_Mini.ino.bootloader.bin",
+          "path": "Multi-Console_DNS_Blocker_v2.5dbg.ino.bootloader.bin",
           "offset": 4096
         },
         {
-          "path": "New-Multi-Console_DNS_BLOKER_ESP32_s2_Mini.ino.partitions.bin",
+          "path": "Multi-Console_DNS_Blocker_v2.5dbg.ino.partitions.bin",
           "offset": 32768
         },
         {
-          "path": "New-Multi-Console_DNS_BLOKER_ESP32_s2_Mini.ino.bin",
+          "path": "Multi-Console_DNS_Blocker_v2.5dbg.ino.bin",
           "offset": 65536
         }
       ]
