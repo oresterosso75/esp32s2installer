@@ -1,0 +1,24 @@
+{
+  "name": "ESP32-s2 Server",
+  "version": "Multi-Console DNS Blocker",
+  "home_assistant_domain": "custom_device",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "ino.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
