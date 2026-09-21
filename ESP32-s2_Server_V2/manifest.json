@@ -1,0 +1,16 @@
+{
+  "name": "ESP32-s2 Server",
+  "version": "ESP32-s2_Server_V2",
+  "home_assistant_domain": "custom_device",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S2",
+      "parts": [
+        {
+          "path": "merged.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
